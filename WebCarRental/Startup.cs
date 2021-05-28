@@ -27,7 +27,7 @@ namespace WebCarRental
         {
             services.AddRazorPages();
             services.AddDbContext<CarRentalContext>(options =>
-                    options.UseSqlServer("Data Source=SSMLNSK;Initial Catalog=InsuranceCompany;Integrated Security=True"));
+                    options.UseSqlServer("Data Source=localhost;Initial Catalog=InsuranceCompany;Integrated Security=True"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
