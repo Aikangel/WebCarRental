@@ -1,0 +1,58 @@
+﻿@page
+@model WebCarRental.Pages.FilReq.Req.Req2Model
+@{
+    <h1>Отдел кадров</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Car[0].RegistrationNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Car[0].BrandCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Car[0].EmployeeCode)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Car)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RegistrationNumber)
+                </td>
+                <td>
+                    @{
+                        try
+                        {
+                            @Model.CarBrand.First(r => r.BrandCode == item.BrandCode).Name
+                        }
+                        catch
+                        {
+                            <p> Данных нет </p>
+                        }
+                    }
+
+                </td>
+                <td>
+                    @{
+                        try
+                        {
+                            @Model.Staff.First(r => r.EmployeeCode == item.EmployeeCode).FullName
+                        }
+                        catch
+                        {
+                            <p> Данных нет </p>
+                        }
+                    }
+
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}

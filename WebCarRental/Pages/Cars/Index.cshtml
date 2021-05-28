@@ -1,0 +1,102 @@
+﻿@page
+@model WebCarRental.Pages.Cars.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].DateOfLastMaintenance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].ReturnMark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].RegistrationNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].SpecialMarks)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].RentalDayPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].CarPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Mileage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].BodyNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].EngineNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].YearOfRelease)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].BrandCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].EmployeeCodeNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Car) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfLastMaintenance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReturnMark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegistrationNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialMarks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RentalDayPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mileage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BodyNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EngineNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YearOfRelease)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BrandCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeCodeNavigation.Address)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.VehicleCode">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.VehicleCode">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.VehicleCode">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

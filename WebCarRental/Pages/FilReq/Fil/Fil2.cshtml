@@ -1,0 +1,33 @@
+﻿@page
+@model WebCarRental.Pages.FilReq.Fil.Fil2Model
+@{
+    <h1>Автопарк</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Car[0].VehicleCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Car[0].BrandCode)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Car)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VehicleCode)
+                    </td>
+                    <td>
+                        @Model.CarBrand.Name
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

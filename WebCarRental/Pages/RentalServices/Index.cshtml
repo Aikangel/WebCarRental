@@ -1,0 +1,90 @@
+﻿@page
+@model WebCarRental.Pages.RentalServices.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalService[0].DateOfIssue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalService[0].RentalPeriod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalService[0].PaymentMark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalService[0].RentalPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalService[0].ReturnDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalService[0].ServiceCode1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalService[0].ServiceCode2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalService[0].ServiceCode3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalService[0].ClientCodeNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalService[0].VehicleCodeNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.RentalService) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfIssue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RentalPeriod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentMark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RentalPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReturnDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceCode1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceCode2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceCode3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientCodeNavigation.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleCodeNavigation.EngineNumber)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ServicesId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ServicesId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ServicesId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
