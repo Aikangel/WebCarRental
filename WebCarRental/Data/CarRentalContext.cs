@@ -33,7 +33,7 @@ namespace WebCarRental.Data
             if (!optionsBuilder.IsConfigured)
             {
                 //optionsBuilder.UseSqlite("Data Source=C:\\Users\\Даша\\Source\\Repos\\Danya\\CarRental.db");
-                optionsBuilder.UseSqlServer("Data Source=SSMLNSK;Initial Catalog=CarRental.db;Integrated Security=True");
+                optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=CarRental.db;Integrated Security=True");
             }
         }
 
